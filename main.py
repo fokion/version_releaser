@@ -43,7 +43,7 @@ def main(argv):
         sys.exit(1)
 
     g = Git(path)
-    logFormat = '{"hash":"%h","author":"%an","msg":"%s","pretty":"%h by %an : %s","time":"%ar"}'
+    logFormat = '{"hash":"%h","author":"%an","msg":"%s","pretty":"%h by %an : %s","time":"%aD"}'
     # git log --pretty=short --format="%h %s by %an , %ar%n" --no-abbrev-commit  --date-order v1.2.0...v1.0.0
     loginfo = g.log('--pretty=short', '--format=' + logFormat, "--no-abbrev-commit", "--date-order",
                     tagFrom + '...' + tagTo)
